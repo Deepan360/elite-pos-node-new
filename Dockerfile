@@ -9,9 +9,7 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     unixodbc \
     unixodbc-dev \
-    msodbcsql17 \
     libssl-dev \
-    libkrb5-dev \
     curl
 
 # Install the Microsoft ODBC Driver for SQL Server
