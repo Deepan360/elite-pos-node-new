@@ -1,0 +1,210 @@
+<head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">  
+  <link rel="icon" type="image/png" href="./assets/img/Untitled design (11)-modified.png">
+  <title>
+    elite POS
+  </title>
+ <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <!-- Nucleo Icons -->
+  <link href="/assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="/assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+
+  <link href="/assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link id="pagestyle" href="/assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+
+   <style>
+    .active{
+      background-color:#c3c5cc !important;
+      background-attachment: fixed;
+      color: rgb(0, 0, 0);
+    }
+     .a :hover{
+      background-color: black;
+      color: white;
+    }
+    .nav-item {
+            position: relative;
+        }
+
+.sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%; 
+    left: 25%;
+    font-weight: 300;
+    align-items: center;
+    align-self: auto;
+    z-index: 2;
+    margin-left: 0% !important;
+    background-color: #aeafb8;
+    color: rgb(0, 0, 0);
+
+}
+        .nav-item:hover .sub-menu {
+            display: block;
+            
+        }
+        
+        .sidenav .sub-menu a:hover {
+            color: #f1f1f1;
+            border-radius: 10px;
+            background-color: black;
+        }
+        .navbar-vertical.navbar-expand-xs .navbar-collapse {
+    
+    
+    height: calc(100vh - 100px);
+}
+h5{
+  margin-left: 5px;
+  padding: 2px;
+}
+  .position-relative {
+      position: relative;
+    }
+    .position-absolute {
+      position: absolute;
+    }
+    .password-container {
+      position: relative;
+      width: 100%;
+    }
+    .password-container input {
+      width: 100%;
+      padding-right: 40px; /* Adjust padding to make space for the icon */
+    }
+    .password-container .fa-eye, 
+    .password-container .fa-eye-slash {
+      position: absolute;
+      top: 50%;
+      right: 10px; /* Adjust right position as needed */
+      transform: translateY(-50%);
+      cursor: pointer;
+    
+    }
+  </style>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+  <link rel="stylesheet"type="text/html" href="https://cdn.datatables.net/buttons/2.0.2/css/buttons.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" type="text/html" href="assets/vendors/fontawesome/all.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+<script type="text/html" src="https://cdn.datatables.net/buttons/2.0.2/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+<script  type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script  type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script  type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script  type="text/javascript" src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" type="text/html" href="https://cdn.datatables.net/buttons/2.0.2/css/buttons.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" type="text/html" href="/resources/demos/style.css">
+  <script type="text/javascript" src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+
+<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-LdixNwFokTj/1pyvMzqp+6E5B8wBDsg4Qf38dltEsunHFRXvZWY8ij20pZg8r59EGzdpW0a3xFui2KYNH5oajw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.6/css/jquery.dataTables.css">
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedcolumns/3.3.3/css/fixedColumns.dataTables.min.css">
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.6/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/fixedcolumns/3.3.3/js/dataTables.fixedColumns.min.js"></script>
+
+</head>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var currentPageUrl = window.location.href;
+
+    // Get all navigation links
+    var navLinks = document.querySelectorAll('.navbar-nav .nav-link, .sub-menu .nav-link');
+
+    // Loop through each link
+    navLinks.forEach(function(link) {
+        var linkUrl = link.getAttribute('href');
+
+        if (currentPageUrl.endsWith(linkUrl)) {
+            link.closest('li').classList.add('active');
+        }
+    });
+});
+
+
+        window.addEventListener('load', () => {
+            const loadingLine = document.querySelector('.loading-line');
+            if (loadingLine) {
+                setTimeout(() => {
+                    loadingLine.remove();
+                }, 2000); // Remove after 2 seconds (adjust as needed)
+            }
+        });
+
+fetch('/auth/sidebar/companyTitle')
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            const companyDetails = data.companyDetails; 
+            const companyTitle = companyDetails.companyName;
+            const gstin = companyDetails.gstin;
+            const address = companyDetails.address;
+            const city = companyDetails.city;
+            const state = companyDetails.state;
+            const mobileNo = companyDetails.mobileNo;
+            const quotes = companyDetails.quotes; 
+
+            document.getElementById('companyTitle').textContent = companyTitle;
+            document.getElementById('gstin').textContent = gstin;
+            document.getElementById('address').textContent = address;
+            document.getElementById('city').textContent = city;
+            document.getElementById('state').textContent = state;
+            document.getElementById('mobileNo').textContent = mobileNo;
+            document.getElementById('quotes').textContent = quotes; 
+            document.getElementById('quotes').style.display = 'block'; 
+
+        } else {
+            console.error('Error fetching company details:', data.message);
+        }
+    })
+    .catch(error => console.error('Error fetching company details:', error));
+
+
+</script>    
+ <script type="text/javascript">
+    (function() {
+      var idleTime = 0;
+      var idleInterval = setInterval(timerIncrement, 60000); 
+
+      document.onmousemove = resetTimer;
+      document.onkeypress = resetTimer;
+      document.onscroll = resetTimer;
+      document.onclick = resetTimer;
+
+      function resetTimer() {
+        idleTime = 0;
+      }
+
+      function timerIncrement() {
+        idleTime++;
+        if (idleTime >= 10) { 
+          window.location.href = '/logout'; 
+        }
+      }
+    })();
+  </script>
+
+
+ 
+ 
