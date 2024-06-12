@@ -9,7 +9,9 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     unixodbc \
     unixodbc-dev \
-    msodbcsql17
+    msodbcsql17 \
+    libssl-dev \
+    libkrb5-dev
 
 # Copy package.json and package-lock.json
 COPY package*.json ./
