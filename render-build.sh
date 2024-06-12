@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Update package list and install necessary ODBC libraries
-sudo apt-get update && sudo apt-get install -y \
+apt-get update && apt-get install -y \
+    build-essential \
     unixodbc \
     unixodbc-dev \
     msodbcsql17
