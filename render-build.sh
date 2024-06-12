@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Update package list and install necessary ODBC libraries
-apt-get update && apt-get install -y \
-    build-essential \
-    unixodbc \
-    unixodbc-dev \
-    msodbcsql17
+# Install unixODBC
+apt-get update
+apt-get install -y unixodbc unixodbc-dev
 
-# Run npm install to install Node.js dependencies
+# Install dependencies
 npm install
+
+# Start your application
+npm start
