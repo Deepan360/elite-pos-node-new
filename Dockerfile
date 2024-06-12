@@ -11,10 +11,10 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm start
+RUN npm install
 
 # Copy the rest of your application code
 COPY . .
 
 # Start your application
-CMD ["npm", "start"]
+CMD ["npm start"]
