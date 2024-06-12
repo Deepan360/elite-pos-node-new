@@ -5,11 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "java",
-            "name": "app",
+            "type": "node",
             "request": "launch",
-            "mainClass": "app",
-            "projectName": "elite_pos_node_f51ab7f2"
+            "name": "Launch Program",
+            "program": "${workspaceFolder}/app.js", // Path to your main application file
+            "cwd": "${workspaceFolder}"
         }
     ]
 }
