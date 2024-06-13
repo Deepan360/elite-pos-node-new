@@ -1,7 +1,7 @@
 # Use the official Node.js image as a base
 FROM node:20.12.2
 
-# Install unixODBC and other required dependencies
+# Install unixODBC-dev using apt-get
 RUN apt-get update && \
     apt-get install -y unixodbc-dev && \
     rm -rf /var/lib/apt/lists/*
