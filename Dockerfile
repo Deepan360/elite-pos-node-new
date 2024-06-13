@@ -6,6 +6,9 @@ RUN apt-get update && \
     apt-get install -y unixodbc unixodbc-dev && \
     rm -rf /var/lib/apt/lists/*
 
+# Set environment variables required for npm
+ENV NODE_ENV=production
+
 # Set the working directory in the container
 WORKDIR /usr/src/app
 
@@ -13,7 +16,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm install --only=production
 
 # Copy the rest of your application code
 COPY . .
