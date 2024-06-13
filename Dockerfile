@@ -1,9 +1,9 @@
-# Use the official Node.js image as a base
-FROM node:20.12.2
+# Stage 1: Build Stage
+FROM node:20.12.2 AS build
 
-# Install unixODBC-dev using apt-get
+# Install build dependencies
 RUN apt-get update && \
-    apt-get install -y unixodbc-dev && \
+    apt-get install -y build-essential && \
     rm -rf /var/lib/apt/lists/*
 
 # Set the working directory in the container
@@ -13,9 +13,21 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm install --only=production
 
-# Copy the rest of your application code
+# Stage 2: Production Stage
+FROM node:20.12.2
+
+# Install unixODBC-dev
+RUN apt-get update && \
+    apt-get install -y unixodbc-dev && \
+    rm -rf /var/lib/apt/lists/*
+
+# Set the working directory in the container
+WORKDIR /usr/src/app
+
+# Copy built files from the previous stage
+COPY --from=build /usr/src/app/node_modules ./node_modules
 COPY . .
 
 # Start your application
