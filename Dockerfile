@@ -3,11 +3,8 @@ FROM node:20.12.2
 
 # Install unixODBC and other required dependencies
 RUN apt-get update && \
-    apt-get install -y unixodbc unixodbc-dev && \
+    apt-get install -y unixodbc-dev && \
     rm -rf /var/lib/apt/lists/*
-
-# Set environment variables required for npm
-ENV NODE_ENV=production
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
@@ -16,7 +13,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install --only=production
+RUN npm install
 
 # Copy the rest of your application code
 COPY . .
