@@ -49,7 +49,7 @@ app.use(
     resave: false,
     saveUninitialized: true,
     cookie: { maxAge: 10 * 60 * 1000 },
-  })
+  })  
 );
 
 const partialspath = path.join(__dirname, "./views/partials");
@@ -89,7 +89,7 @@ app.use((err, req, res, next) => {
 });
 
 // Start the server
-const PORT = process.env.PORT || 5000; // Use port from environment variable or default to 5000
+const PORT = process.env.PORT || 8007; // Use port from environment variable or default to 5000
 app.listen(PORT, () => {
   console.log(`Server started @ port ${PORT} 🚀 `);
 });
