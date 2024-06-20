@@ -1,12 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# Install unixODBC
+# Update package lists
 apt-get update
-apt-get install -y unixodbc unixodbc-dev
 
-# Install dependencies
-npm install
+# Install system dependencies
+apt-get install -y unixodbc-dev
 
-# Start your application
-npm start
- 
+# Other dependencies can be added here
