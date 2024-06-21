@@ -4728,32 +4728,35 @@ exports.stockob = async (req, res) => {
 /*****UOM */
 
 exports.uomadd = async (req, res) => {
-  const {
-    unitname, shortname, baseunit, baseqty, complexunit
-  } = req.body;
+  let { unitname, shortname, baseunit, baseqty, complexunit } = req.body;
+
+  // Validate and convert baseqty to a number, or set it to null if invalid
+  baseqty = parseFloat(baseqty);
+  if (isNaN(baseqty)) {
+    baseqty = null;
+  }
 
   try {
-    // Ensure the database connection is established before proceeding
     await poolConnect();
 
-    const result = await pool.request()
-      .input('unitname', sql.NVarChar(100), unitname || null)
-      .input('shortname', sql.NVarChar(50), shortname || null)
-      .input('baseunit', sql.NVarChar(50), baseunit || null)
-      .input('baseqty', sql.Decimal(18, 2), baseqty || null)
-      .input('complexunit', sql.NVarChar(50), complexunit || null)
-      .execute('AddUOM');
+    const result = await pool
+      .request()
+      .input("unitname", sql.NVarChar(100), unitname || null)
+      .input("shortname", sql.NVarChar(50), shortname || null)
+      .input("baseunit", sql.NVarChar(50), baseunit || null)
+      .input("baseqty", sql.Decimal(18, 2), baseqty)
+      .input("complexunit", sql.NVarChar(50), complexunit || null)
+      .execute("AddUOM");
 
     console.log(result);
-    console.log(result.toString());
 
-    // Redirect to another route after processing
-    return res.redirect('/uom');
+    return res.redirect("/uom");
   } catch (error) {
     console.error(error);
-    return res.status(500).send('Internal Server Error');
+    return res.status(500).send("Internal Server Error");
   }
 };
+
 
 
 

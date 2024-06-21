@@ -140,6 +140,20 @@
         }, 1000); // 2000 milliseconds = 2 seconds
     }
 });
+    document.getElementById('manufacturerform').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const baseqtyInput = document.getElementById('baseqty');
+        const baseqtyValue = baseqtyInput.value.trim();
+
+        if (baseqtyValue === '' || isNaN(baseqtyValue)) {
+            baseqtyInput.value = '';  // This will be handled as null in the backend
+        }
+
+        this.submit();
+    });
+
+
   </script>
     <script>
         // Add form button click event
@@ -315,19 +329,19 @@ $('#customerTable').on('click', '.deleteBtn', function() {
     <div class="row">
         <div class="col">
             <!-- First Column -->
-            <input type="hidden" placeholder="Id" name="id" id="id">
+            <input type="hidden" name="id" id="id">
             <input type="text" placeholder="Unit Name" name="unitname" id="unitname">
             <input type="text" placeholder="Short Name" name="shortname" id="shortname">
             <input type="text" placeholder="Base Unit" name="baseunit" id="baseunit">
             <input type="text" placeholder="Base Qty" name="baseqty" id="baseqty">
-                    <label for="complexunit" style="font-size: 14px;">Complex Unit<input type="checkbox" id="complexunit" value="true" name="complexunit"  ></label>
-
-            
+            <label for="complexunit" style="font-size: 14px;">Complex Unit<input type="checkbox" id="complexunit"
+                    value="true" name="complexunit"></label>
         </div>
     </div>
     <button type="submit" value="submit" class="btn btn-primary" id="saveManufacturer">Save</button>
     <button type="button" class="btn btn-primary" id="closeForm">Close</button>
 </form>
+
   
 <form class="editForm" method="put" action="/auth/uomedit/:id">
      <div class="row">
