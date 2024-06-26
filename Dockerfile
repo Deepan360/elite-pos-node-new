@@ -20,7 +20,7 @@ RUN npm install --only=production
 COPY . .
 
 # Expose the application port (optional, adjust as needed)
-EXPOSE 3000
+EXPOSE 5000
 
 # Define the command to run the application
-CMD ["node", "server.js"]
+CMD ["node", "app.js"]
