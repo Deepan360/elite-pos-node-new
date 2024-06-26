@@ -1,17 +1,26 @@
-# Use the official Node.js image as a base
 FROM node:20.12.2
 
-# Set the working directory in the container
+# Install build dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    python3 \
+    unixodbc-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set the working directory
 WORKDIR /usr/src/app
 
-# Copy package.json and package-lock.json to the working directory
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install dependencies, excluding devDependencies
+# Install production dependencies
 RUN npm install --only=production
 
-# Copy the rest of your application code
+# Copy the rest of the application files
 COPY . .
 
-# Start your application
-CMD ["npm", "start"]
+# Expose the application port (optional, adjust as needed)
+EXPOSE 3000
+
+# Define the command to run the application
+CMD ["node", "server.js"]
